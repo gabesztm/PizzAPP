@@ -4,15 +4,20 @@
              xmlns:res="clr-namespace:PizzAPP.Resources"
              x:Class="PizzAPP.EditPage"
              Title="EditPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Shadow x:Key="shadow" Brush="{AppThemeBinding Dark=White, Light=Gray}" Offset="10,10" Opacity="0.5"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <VerticalStackLayout>
-        <HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="End">
             <!--<Button Command="{Binding CancelCommand}" Text="❮" HorizontalOptions="Start"/>-->
-            <Button Command="{Binding DeleteCommand}" Text="❌" HorizontalOptions="End"/>
-            <Button Command="{Binding SaveCommand}" Text="✅" HorizontalOptions="End"/>
+            <Button Command="{Binding DeleteCommand}" Text="❌" HorizontalOptions="End" BackgroundColor="Transparent"/>
+            <Button Command="{Binding SaveCommand}" Text="✅" HorizontalOptions="End"  BackgroundColor="Transparent"/>
 
         </HorizontalStackLayout>
 
-        <Grid>
+        <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -26,22 +31,32 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Text="{x:Static res:AppRes.Name}"/>
-            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Pizza.Title}"/>
+            <Label Grid.Row="0" Grid.Column="0" Text="{x:Static res:AppRes.Name}" VerticalOptions="Center"/>
+            <Border Grid.Row="0" Grid.Column="1" >
+                <Entry  Text="{Binding Pizza.Title}" Shadow="{x:StaticResource Key=shadow}" />
+            </Border>
 
-            <Label Grid.Row="1" Grid.Column="0" Text="{x:Static res:AppRes.Diameter}"/>
-            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Pizza.Diameter}"/>
-            
-            <Label Grid.Row="2" Grid.Column="0" Text="{x:Static res:AppRes.Price}"/>
-            <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Pizza.Price}"/>
-            
-            <Label Grid.Row="3" Grid.Column="0" Text="{x:Static res:AppRes.Shipping}"/>
-            <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Pizza.Shipping}"/>
-            
-            <Label Grid.Row="4" Grid.Column="0" Text="{x:Static res:AppRes.Link}"/>
-            <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Pizza.URL}"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="{x:Static res:AppRes.Diameter}" VerticalOptions="Center"/>
+            <Border  Grid.Row="1" Grid.Column="1" >
+                <Entry Text="{Binding Pizza.Diameter}" Shadow="{x:StaticResource Key=shadow}"/>
+            </Border>
 
-            <Label Grid.Row="5" Grid.Column="0" Text="{x:Static res:AppRes.Rating}"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="{x:Static res:AppRes.Price}" VerticalOptions="Center"/>
+            <Border Grid.Row="2" Grid.Column="1" >
+                <Entry  Text="{Binding Pizza.Price}" Shadow="{x:StaticResource Key=shadow}"/>
+            </Border>
+
+            <Label Grid.Row="3" Grid.Column="0" Text="{x:Static res:AppRes.Shipping}" VerticalOptions="Center"/>
+            <Border Grid.Row="3" Grid.Column="1" >
+                <Entry  Text="{Binding Pizza.Shipping}" Shadow="{x:StaticResource Key=shadow}"/>
+            </Border>
+
+            <Label Grid.Row="4" Grid.Column="0" Text="{x:Static res:AppRes.Link}" VerticalOptions="Center"/>
+            <Border Grid.Row="4" Grid.Column="1" >
+                <Entry  Text="{Binding Pizza.URL}" Shadow="{x:StaticResource Key=shadow}"/>
+            </Border>
+
+            <Label Grid.Row="5" Grid.Column="0" Text="{x:Static res:AppRes.Rating}" VerticalOptions="Center"/>
             <Grid Grid.Row="5" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -49,10 +64,11 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding Source={x:Reference slider},
                               Path=Value,
-                              StringFormat='{0:F0}/10'}" Grid.Column="0"/>
-                <Slider x:Name="slider"  Value="{Binding Pizza.Rating}" Minimum="0" Maximum="10" Grid.Column="1"/>
+                              StringFormat='{0:F0}/10'}" Grid.Column="0"
+                       Shadow="{x:StaticResource Key=shadow}"/>
+                <Slider x:Name="slider"  Value="{Binding Pizza.Rating}" Minimum="1" Maximum="10" Grid.Column="1" />
             </Grid>
-            
+
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
