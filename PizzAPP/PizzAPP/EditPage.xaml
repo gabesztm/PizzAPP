@@ -38,22 +38,22 @@
 
             <Label Grid.Row="1" Grid.Column="0" Text="{x:Static res:AppRes.Diameter}" VerticalOptions="Center"/>
             <Border  Grid.Row="1" Grid.Column="1" >
-                <Entry Text="{Binding Pizza.Diameter}" Shadow="{x:StaticResource Key=shadow}"/>
+                <Entry Text="{Binding Pizza.Diameter}" Shadow="{x:StaticResource Key=shadow}" Keyboard="Numeric"/>
             </Border>
 
             <Label Grid.Row="2" Grid.Column="0" Text="{x:Static res:AppRes.Price}" VerticalOptions="Center"/>
             <Border Grid.Row="2" Grid.Column="1" >
-                <Entry  Text="{Binding Pizza.Price}" Shadow="{x:StaticResource Key=shadow}"/>
+                <Entry  Text="{Binding Pizza.Price}" Shadow="{x:StaticResource Key=shadow}" Keyboard="Numeric"/>
             </Border>
 
             <Label Grid.Row="3" Grid.Column="0" Text="{x:Static res:AppRes.Shipping}" VerticalOptions="Center"/>
             <Border Grid.Row="3" Grid.Column="1" >
-                <Entry  Text="{Binding Pizza.Shipping}" Shadow="{x:StaticResource Key=shadow}"/>
+                <Entry  Text="{Binding Pizza.Shipping}" Shadow="{x:StaticResource Key=shadow}" Keyboard="Numeric"/>
             </Border>
 
             <Label Grid.Row="4" Grid.Column="0" Text="{x:Static res:AppRes.Link}" VerticalOptions="Center"/>
             <Border Grid.Row="4" Grid.Column="1" >
-                <Entry  Text="{Binding Pizza.URL}" Shadow="{x:StaticResource Key=shadow}"/>
+                <Entry  Text="{Binding Pizza.URL}" Shadow="{x:StaticResource Key=shadow}" Keyboard="Url"/>
             </Border>
 
             <Label Grid.Row="5" Grid.Column="0" Text="{x:Static res:AppRes.Rating}" VerticalOptions="Center"/>
