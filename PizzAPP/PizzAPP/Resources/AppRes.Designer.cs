@@ -88,6 +88,15 @@ namespace PizzAPP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string EditPage {
+            get {
+                return ResourceManager.GetString("EditPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Link.
         /// </summary>
         internal static string Link {

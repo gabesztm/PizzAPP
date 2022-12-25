@@ -126,6 +126,9 @@
   <data name="Diameter" xml:space="preserve">
     <value>Diameter</value>
   </data>
+  <data name="EditPage" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="Link" xml:space="preserve">
     <value>Link</value>
   </data>
