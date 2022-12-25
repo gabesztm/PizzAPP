@@ -11,7 +11,7 @@ namespace PizzAPP.Model
         public double TotalPrice => Price + Shipping;
         public string URL { get; set; }
         public int Rating { get; set; } = 1;
-        public double UnitPrice => (Price + Shipping) / Area;
+        public double UnitPrice => TotalPrice / Area;
         public Guid Guid { get; set; } //TODO should not be public settable, although json parse does not work in MAUI now
         public bool ToBeDeleted { get; set; }
 
